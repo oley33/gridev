@@ -296,18 +296,32 @@ def build_feature_matrix(force: bool = False) -> pd.DataFrame:
     pbp_redzone = raw["pbp_redzone"]
     draft_picks = raw["draft_picks"]
 
-    # --- 1. Get clean positions and team mappings ---
+    # --- 1. Get clean positions, team mappings, and names ---
     positions = _clean_position(rosters)
     player_teams = _get_player_teams(rosters)
 
+    # Clean names from rosters — seasonal player_display_name concatenates per game
+    # Use player_name from rosters (already clean), keyed by player_id only since
+    # names don't change season to season for the same player
+    clean_names = (
+        rosters[["player_id", "player_name"]]
+        .drop_duplicates(subset=["player_id"])
+    )
+
     # --- 2. Start with seasonal stats, fix position ---
     df = seasonal.copy()
-    df = df.drop(columns=["position", "position_group"], errors="ignore")
+    # Drop bugged columns: position concatenates per game, player_name is also
+    # bugged in some versions. Clean names come from rosters below.
+    df = df.drop(columns=["position", "position_group", "player_name"], errors="ignore")
     df = df.merge(positions, on=["player_id", "season"], how="inner")
     df = df[df["position"].isin(POSITIONS)].copy()
 
-    # Add team
+    # Add team and clean name
     df = df.merge(player_teams, on=["player_id", "season"], how="left")
+    df = df.merge(clean_names, on="player_id", how="left")
+    # Replace the bugged display name (concatenated per game) with clean roster name
+    df["player_display_name"] = df["player_name"].fillna(df["player_display_name"])
+    df = df.drop(columns=["player_name"], errors="ignore")
 
     # --- 3. Compute per-game rates ---
     games = df["games"].clip(lower=1)
