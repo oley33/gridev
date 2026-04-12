@@ -31,9 +31,10 @@ N_SIMS = 10_000
 RNG = np.random.default_rng(42)
 
 # Boom/bust thresholds by position (PPG, full PPR, 12-team league)
-# Boom = top-12 at position, Bust = outside startable range
-BOOM_THRESHOLDS = {"QB": 18.0, "RB": 14.0, "WR": 14.0, "TE": 10.0}
-BUST_THRESHOLDS = {"QB": 10.0, "RB": 5.0, "WR": 5.0, "TE": 3.5}
+# Boom = roughly top-12 at position, Bust = outside startable range (≈ beyond
+# QB12 / RB36 / WR36 / TE12). Calibrated against 2022-2024 end-of-season ranks.
+BOOM_THRESHOLDS = {"QB": 20.0, "RB": 16.0, "WR": 15.0, "TE": 11.0}
+BUST_THRESHOLDS = {"QB": 14.0, "RB": 9.0, "WR": 9.0, "TE": 6.0}
 
 
 def _simulate_player(

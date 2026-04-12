@@ -209,7 +209,7 @@ export default function RankingsPage() {
                     {p.ceiling_p90.toFixed(1)}
                   </td>
                   <td className="px-3 py-2 text-right font-mono">
-                    {p.boom_pct.toFixed(0)}%
+                    {(p.boom_pct * 100).toFixed(0)}%
                   </td>
                 </tr>
               ))}

@@ -101,7 +101,7 @@ export default function ProjectionsPage() {
       <div className="mb-6">
         <h1 className="text-2xl font-bold">Player Projections</h1>
         <p className="mt-1 text-sm text-muted">
-          ML-powered 2025 fantasy football projections with uncertainty estimates
+          ML-powered 2026 fantasy football projections with calibrated uncertainty estimates
         </p>
       </div>
 
@@ -158,7 +158,7 @@ export default function ProjectionsPage() {
                 <SortHeader label="Floor" field="floor_p10" className="text-right" />
                 <SortHeader label="Ceiling" field="ceiling_p90" className="text-right" />
                 <SortHeader label="Boom%" field="boom_pct" className="text-right" />
-                <SortHeader label="Bust%" field="bust_pct" className="text-right" />
+                <SortHeader label="Bust%" field="relative_bust_pct" className="text-right" />
                 <SortHeader label="Std" field="proj_std" className="text-right" />
               </tr>
             </thead>
@@ -186,10 +186,10 @@ export default function ProjectionsPage() {
                     {p.ceiling_p90.toFixed(1)}
                   </td>
                   <td className="px-3 py-2 text-right font-mono">
-                    {p.boom_pct.toFixed(0)}%
+                    {(p.boom_pct * 100).toFixed(0)}%
                   </td>
                   <td className="px-3 py-2 text-right font-mono">
-                    {p.bust_pct.toFixed(0)}%
+                    {((p.relative_bust_pct ?? p.bust_pct) * 100).toFixed(0)}%
                   </td>
                   <td className="px-3 py-2 text-right font-mono text-muted">
                     {p.proj_std.toFixed(1)}

@@ -55,6 +55,65 @@ export async function getRankings(params: {
   return apiFetch(`/rankings?${searchParams}`);
 }
 
+export interface BacktestMetrics {
+  mae: number;
+  rmse: number;
+  r2: number;
+  spearman: number;
+  n: number;
+}
+
+export interface BacktestYearRow {
+  position: string;
+  target_year: number;
+  model: BacktestMetrics;
+  naive: BacktestMetrics;
+  weighted_history: BacktestMetrics;
+}
+
+export interface BacktestResult {
+  target_years: number[];
+  forecasters: Record<string, string>;
+  per_year: BacktestYearRow[];
+  per_position: Record<string, Record<string, BacktestMetrics>>;
+  overall: Record<string, BacktestMetrics>;
+}
+
+export interface ConsensusRow {
+  player_id: string;
+  player_name: string;
+  position: string;
+  team: string;
+  proj_median: number;
+  our_rank: number;
+  fp_rank: number;
+  rank_diff: number;
+}
+
+export interface ConsensusSnapshot {
+  scrape_date: string;
+  season: number;
+  n_matched: number;
+  top_n: number;
+  overall_spearman: number;
+  top_100_spearman: number;
+  per_position: Record<
+    string,
+    { n_matched: number; spearman: number; mean_abs_rank_diff: number }
+  >;
+  top_players_combined: ConsensusRow[];
+  we_rank_higher: ConsensusRow[];
+  we_rank_lower: ConsensusRow[];
+}
+
+export async function getBacktest(): Promise<BacktestResult> {
+  return apiFetch("/performance/backtest");
+}
+
+export async function getConsensusSnapshot(): Promise<ConsensusSnapshot> {
+  return apiFetch("/performance/consensus");
+}
+
 export async function getDraftRecommendations(body: {
   settings?: DraftSettings;
   drafted_player_ids?: string[];

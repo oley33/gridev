@@ -1,12 +1,12 @@
 {
-  "target_season": 2025,
-  "training_seasons": "2012-2024",
-  "n_players": 436,
+  "target_season": 2026,
+  "training_seasons": "2012-2025",
+  "n_players": 512,
   "positions": {
-    "QB": 58,
-    "RB": 113,
-    "WR": 172,
-    "TE": 93
+    "QB": 63,
+    "RB": 135,
+    "WR": 206,
+    "TE": 108
   },
   "feature_cols": [
     "pass_att_per_game",
@@ -64,15 +64,15 @@
     "fumbles_lost": -2.0
   },
   "boom_thresholds": {
-    "QB": 18.0,
-    "RB": 14.0,
-    "WR": 14.0,
-    "TE": 10.0
+    "QB": 20.0,
+    "RB": 16.0,
+    "WR": 15.0,
+    "TE": 11.0
   },
   "bust_thresholds": {
-    "QB": 10.0,
-    "RB": 5.0,
-    "WR": 5.0,
-    "TE": 3.5
+    "QB": 14.0,
+    "RB": 9.0,
+    "WR": 9.0,
+    "TE": 6.0
   }
 }

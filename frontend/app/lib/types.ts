@@ -1,3 +1,16 @@
+export interface ExplanationItem {
+  feature: string;
+  label: string;
+  value: string;
+  value_raw: number;
+  impact: number;
+}
+
+export interface Explanation {
+  pros: ExplanationItem[];
+  cons: ExplanationItem[];
+}
+
 export interface PlayerProjection {
   player_id: string;
   player_name: string;
@@ -17,6 +30,11 @@ export interface PlayerProjection {
   boom_pct: number;
   bust_pct: number;
   vor: number | null;
+  explanation?: Explanation | null;
+  pos_rank?: number | null;
+  relative_bust_pct?: number | null;
+  bust_threshold_rank?: number | null;
+  bust_threshold_ppg?: number | null;
 }
 
 export interface ProjectionsResponse {

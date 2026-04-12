@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FF Projections",
+  title: "GridEV",
   description:
-    "Fantasy football player projections with ML-powered uncertainty estimates",
+    "Find your edge. ML-powered fantasy football projections with calibrated uncertainty, boom/bust probability, and VOR rankings.",
 };
 
 export default function RootLayout({

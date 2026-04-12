@@ -6,6 +6,19 @@ All API inputs and outputs are strictly typed. No raw dicts cross the API bounda
 from pydantic import BaseModel, Field
 
 
+class ExplanationItem(BaseModel):
+    feature: str
+    label: str
+    value: str
+    value_raw: float
+    impact: float
+
+
+class Explanation(BaseModel):
+    pros: list[ExplanationItem] = Field(default_factory=list)
+    cons: list[ExplanationItem] = Field(default_factory=list)
+
+
 class PlayerProjection(BaseModel):
     player_id: str
     player_name: str
@@ -25,6 +38,11 @@ class PlayerProjection(BaseModel):
     boom_pct: float
     bust_pct: float
     vor: float | None = None
+    explanation: Explanation | None = None
+    pos_rank: int | None = None
+    relative_bust_pct: float | None = None
+    bust_threshold_rank: int | None = None
+    bust_threshold_ppg: float | None = None
 
 
 class ProjectionsResponse(BaseModel):

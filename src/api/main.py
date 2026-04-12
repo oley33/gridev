@@ -4,9 +4,11 @@ Serves pre-computed player projections with VOR ranking and draft
 recommendations. All data is loaded at startup from exported model output.
 """
 
+import json
 from contextlib import asynccontextmanager
+from pathlib import Path
 
-from fastapi import Depends, FastAPI, Query, Request
+from fastapi import Depends, FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 
 from src.api import config
@@ -204,3 +206,29 @@ def draft_recommend(req: DraftRecommendRequest):
         best_available=recommendations,
         roster_needs=roster_needs,
     )
+
+
+# --- Performance / Backtest ---
+
+
+def _load_json(filename: str) -> dict:
+    path = Path(config.EXPORT_DIR) / filename
+    if not path.exists():
+        raise HTTPException(
+            status_code=404,
+            detail=f"{filename} not found. Run the corresponding export script.",
+        )
+    with open(path) as f:
+        return json.load(f)
+
+
+@app.get("/performance/backtest", dependencies=[Depends(_apply_rate_limit)])
+def get_backtest():
+    """Walk-forward backtest results: our model vs naive vs weighted-history."""
+    return _load_json("backtest.json")
+
+
+@app.get("/performance/consensus", dependencies=[Depends(_apply_rate_limit)])
+def get_consensus():
+    """Current-year snapshot comparing our rankings vs FantasyPros ECR."""
+    return _load_json("consensus_snapshot.json")

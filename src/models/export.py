@@ -13,7 +13,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from scipy.stats import skewnorm
+from scipy.stats import norm, skewnorm
 from xgboost import XGBRegressor
 
 from src.pipeline.features import build_feature_matrix
@@ -31,6 +31,7 @@ from src.models.monte_carlo import (
     BUST_THRESHOLDS,
     N_SIMS,
 )
+from src.models.explain import compute_shap_explanations
 from src.scoring.fantasy_points import SCORING
 
 EXPORT_DIR = Path(__file__).resolve().parents[2] / "export"
@@ -67,7 +68,7 @@ def _run_monte_carlo(
     }
 
 
-def export_projections(target_season: int = 2024, force: bool = False) -> Path:
+def export_projections(target_season: int = 2026, force: bool = False) -> Path:
     """Train on all data up to target_season and export projections.
 
     The target_season is the season we're projecting (the upcoming draft).
@@ -130,6 +131,9 @@ def export_projections(target_season: int = 2024, force: bool = False) -> Path:
         X_proj = pos_project[feature_cols].values
         xgb_preds = model.predict(X_proj)
 
+        # SHAP explanations — per-player pros/cons in PPG units
+        explanations = compute_shap_explanations(model, X_proj, feature_cols)
+
         # Model uncertainty via CV
         model_std = _estimate_model_std_cv(model, X_train, y_train)
 
@@ -153,6 +157,13 @@ def export_projections(target_season: int = 2024, force: bool = False) -> Path:
         proj_history = pos_project.merge(
             history, on=["player_id", "season"], how="left"
         )
+
+        # Skew parameter used in Monte Carlo (must match _run_monte_carlo)
+        skew_by_pos = {"QB": 1.0, "RB": 2.0, "WR": 1.5, "TE": 2.5}
+        pos_skew = skew_by_pos.get(pos, 1.5)
+
+        pos_projections = []
+        pos_dist_params = []  # (bay_pred, bay_std) kept for relative-bust second pass
 
         for i, (xgb_pred, row) in enumerate(
             zip(xgb_preds, proj_history.itertuples())
@@ -187,10 +198,52 @@ def export_projections(target_season: int = 2024, force: bool = False) -> Path:
                 "games_prev": int(player_row["games"]),
                 "ppg_prev": round(float(player_row["ppg"]), 2),
                 **mc,
+                "explanation": explanations[i],
             }
-            all_projections.append(projection)
+            pos_projections.append(projection)
+            # Store post-MC std (the actual simulated spread) for relative bust calc.
+            # This is wider and more honest than bay_std for established veterans.
+            pos_dist_params.append(mc["proj_std"])
 
-        print(f"    {len(pos_project)} players projected")
+        # --- Relative bust: rank-adjusted disappointment probability ---
+        # Sort within position by proj_median so we can compute thresholds.
+        # For the player projected at rank R, bust = P(their PPG falls below
+        # the projection of the player currently at rank R + BUST_FALLOFF).
+        # This means a rank-1 pick needs to stay near the top to avoid "bust"
+        # territory, while a late-round pick just needs to not crater.
+        BUST_FALLOFF = 12  # "falls a full positional tier"
+
+        sorted_idx = sorted(
+            range(len(pos_projections)),
+            key=lambda k: pos_projections[k]["proj_median"],
+            reverse=True,
+        )
+        pos_projections = [pos_projections[k] for k in sorted_idx]
+        pos_dist_params = [pos_dist_params[k] for k in sorted_idx]
+        n_pos = len(pos_projections)
+
+        for rank_i, (proj, proj_std) in enumerate(
+            zip(pos_projections, pos_dist_params)
+        ):
+            threshold_rank_i = min(rank_i + BUST_FALLOFF, n_pos - 1)
+            threshold_ppg = pos_projections[threshold_rank_i]["proj_median"]
+
+            # Use the simulated proj_std (post-MC spread) for the CDF.
+            # Floor it at 2.0 PPG — even a perfectly predictable player has
+            # genuine season-level variance from injury, game-script, etc.
+            effective_std = max(proj_std, 2.0)
+            # Normal approximation: proj_median is already the median of the
+            # simulation, so this is consistent with the displayed floor/ceiling.
+            rel_bust = float(norm.cdf(threshold_ppg, loc=proj["proj_median"], scale=effective_std))
+            rel_bust = round(float(np.clip(rel_bust, 0.0, 1.0)), 3)
+
+            proj["pos_rank"] = rank_i + 1
+            proj["relative_bust_pct"] = rel_bust
+            proj["bust_threshold_rank"] = threshold_rank_i + 1
+            proj["bust_threshold_ppg"] = round(float(threshold_ppg), 2)
+
+        all_projections.extend(pos_projections)
+        print(f"    {len(pos_projections)} players projected")
 
     # Sort by projected median descending
     all_projections.sort(key=lambda p: p["proj_median"], reverse=True)
@@ -221,4 +274,4 @@ def export_projections(target_season: int = 2024, force: bool = False) -> Path:
 
 
 if __name__ == "__main__":
-    export_projections(target_season=2025, force=False)
+    export_projections(target_season=2026, force=False)

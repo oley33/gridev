@@ -7,6 +7,8 @@ const links = [
   { href: "/", label: "Projections" },
   { href: "/rankings", label: "Rankings" },
   { href: "/draft", label: "Draft Assistant" },
+  { href: "/performance", label: "Performance" },
+  { href: "/methodology", label: "Methodology" },
 ];
 
 export default function Nav() {
@@ -17,8 +19,8 @@ export default function Nav() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-14 items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-lg font-bold text-accent">FF</span>
-            <span className="text-lg font-semibold">Projections</span>
+            <span className="text-lg font-bold text-accent">Grid</span>
+            <span className="text-lg font-semibold">EV</span>
           </div>
           <div className="flex gap-1">
             {links.map((link) => {

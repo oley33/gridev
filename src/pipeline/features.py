@@ -267,9 +267,9 @@ def _compute_draft_capital(draft_picks: pd.DataFrame) -> pd.DataFrame:
     Uses gsis_id to join to player_id. Value decays — only relevant
     for first ~4 years of career.
     """
-    picks = draft_picks[draft_picks["gsis_id"].notna()].copy()
-    picks = picks[["gsis_id", "season", "pick"]].rename(
-        columns={"gsis_id": "player_id", "season": "draft_season", "pick": "draft_pick"}
+    picks = draft_picks[draft_picks["player_id"].notna()].copy()
+    picks = picks[["player_id", "season", "pick"]].rename(
+        columns={"season": "draft_season", "pick": "draft_pick"}
     )
     # Invert: pick 1 = highest capital. Cap at 260 (total picks).
     picks["draft_capital"] = (261 - picks["draft_pick"]).clip(lower=1) / 260
@@ -352,9 +352,9 @@ def build_feature_matrix(force: bool = False) -> pd.DataFrame:
     )
 
     # --- 5. Opportunity shares ---
-    df["target_share_clean"] = df["target_share"].fillna(df["tgt_sh"]).fillna(0)
-    df["air_yards_share_clean"] = df["air_yards_share"].fillna(df["ay_sh"]).fillna(0)
-    df["wopr"] = df["wopr_x"].fillna(df["wopr_y"]).fillna(0)
+    df["target_share_clean"] = df["target_share"].fillna(0)
+    df["air_yards_share_clean"] = df["air_yards_share"].fillna(0)
+    df["wopr"] = df["wopr"].fillna(0) if "wopr" in df.columns else 0
 
     # --- 6. TD indicators ---
     total_tds = (

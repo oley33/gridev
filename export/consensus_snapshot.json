@@ -1,0 +1,1142 @@
+{
+  "scrape_date": "2026-04-10",
+  "season": 2026,
+  "n_matched": 285,
+  "n_our_top_n": 200,
+  "n_fp_top_n": 200,
+  "top_n": 200,
+  "overall_spearman": 0.75,
+  "top_100_spearman": 0.291,
+  "per_position": {
+    "QB": {
+      "n_matched": 40,
+      "spearman": 0.783,
+      "mean_abs_rank_diff": 7.4
+    },
+    "RB": {
+      "n_matched": 89,
+      "spearman": 0.887,
+      "mean_abs_rank_diff": 12.17
+    },
+    "WR": {
+      "n_matched": 106,
+      "spearman": 0.907,
+      "mean_abs_rank_diff": 12.32
+    },
+    "TE": {
+      "n_matched": 50,
+      "spearman": 0.77,
+      "mean_abs_rank_diff": 8.82
+    }
+  },
+  "top_players_combined": [
+    {
+      "player_id": "00-0033873",
+      "player_name": "Patrick Mahomes",
+      "position": "QB",
+      "team": "KC",
+      "proj_median": 21.4,
+      "our_rank": 1,
+      "fp_rank": 94,
+      "rank_diff": 93
+    },
+    {
+      "player_id": "00-0036389",
+      "player_name": "Jalen Hurts",
+      "position": "QB",
+      "team": "PHI",
+      "proj_median": 20.2,
+      "our_rank": 2,
+      "fp_rank": 54,
+      "rank_diff": 52
+    },
+    {
+      "player_id": "00-0040691",
+      "player_name": "Jaxson Dart",
+      "position": "QB",
+      "team": "NYG",
+      "proj_median": 20.2,
+      "our_rank": 3,
+      "fp_rank": 69,
+      "rank_diff": 66
+    },
+    {
+      "player_id": "00-0039139",
+      "player_name": "Jahmyr Gibbs",
+      "position": "RB",
+      "team": "DET",
+      "proj_median": 19.6,
+      "our_rank": 4,
+      "fp_rank": 5,
+      "rank_diff": 1
+    },
+    {
+      "player_id": "00-0034857",
+      "player_name": "Josh Allen",
+      "position": "QB",
+      "team": "BUF",
+      "proj_median": 19.5,
+      "our_rank": 5,
+      "fp_rank": 24,
+      "rank_diff": 19
+    },
+    {
+      "player_id": "00-0039732",
+      "player_name": "Bo Nix",
+      "position": "QB",
+      "team": "DEN",
+      "proj_median": 19.4,
+      "our_rank": 6,
+      "fp_rank": 102,
+      "rank_diff": 96
+    },
+    {
+      "player_id": "00-0038542",
+      "player_name": "Bijan Robinson",
+      "position": "RB",
+      "team": "ATL",
+      "proj_median": 19.0,
+      "our_rank": 7,
+      "fp_rank": 2,
+      "rank_diff": -5
+    },
+    {
+      "player_id": "00-0039918",
+      "player_name": "Caleb Williams",
+      "position": "QB",
+      "team": "CHI",
+      "proj_median": 18.8,
+      "our_rank": 8,
+      "fp_rank": 71,
+      "rank_diff": 63
+    },
+    {
+      "player_id": "00-0039075",
+      "player_name": "Puka Nacua",
+      "position": "WR",
+      "team": "LA",
+      "proj_median": 18.4,
+      "our_rank": 9,
+      "fp_rank": 3,
+      "rank_diff": -6
+    },
+    {
+      "player_id": "00-0036971",
+      "player_name": "Trevor Lawrence",
+      "position": "QB",
+      "team": "JAX",
+      "proj_median": 18.4,
+      "our_rank": 10,
+      "fp_rank": 85,
+      "rank_diff": 75
+    },
+    {
+      "player_id": "00-0036355",
+      "player_name": "Justin Herbert",
+      "position": "QB",
+      "team": "LAC",
+      "proj_median": 18.1,
+      "our_rank": 11,
+      "fp_rank": 76,
+      "rank_diff": 65
+    },
+    {
+      "player_id": "00-0033077",
+      "player_name": "Dak Prescott",
+      "position": "QB",
+      "team": "DAL",
+      "proj_median": 17.9,
+      "our_rank": 12,
+      "fp_rank": 91,
+      "rank_diff": 79
+    },
+    {
+      "player_id": "00-0036963",
+      "player_name": "Amon-Ra St. Brown",
+      "position": "WR",
+      "team": "DET",
+      "proj_median": 17.9,
+      "our_rank": 13,
+      "fp_rank": 8,
+      "rank_diff": -5
+    },
+    {
+      "player_id": "00-0026498",
+      "player_name": "Matthew Stafford",
+      "position": "QB",
+      "team": "LA",
+      "proj_median": 17.8,
+      "our_rank": 14,
+      "fp_rank": 101,
+      "rank_diff": 87
+    },
+    {
+      "player_id": "00-0037834",
+      "player_name": "Brock Purdy",
+      "position": "QB",
+      "team": "SF",
+      "proj_median": 17.8,
+      "our_rank": 15,
+      "fp_rank": 93,
+      "rank_diff": 78
+    },
+    {
+      "player_id": "00-0033106",
+      "player_name": "Jared Goff",
+      "position": "QB",
+      "team": "DET",
+      "proj_median": 17.5,
+      "our_rank": 16,
+      "fp_rank": 112,
+      "rank_diff": 96
+    },
+    {
+      "player_id": "00-0038543",
+      "player_name": "Jaxon Smith-Njigba",
+      "position": "WR",
+      "team": "SEA",
+      "proj_median": 17.3,
+      "our_rank": 17,
+      "fp_rank": 4,
+      "rank_diff": -13
+    },
+    {
+      "player_id": "00-0036900",
+      "player_name": "Ja'Marr Chase",
+      "position": "WR",
+      "team": "CIN",
+      "proj_median": 17.2,
+      "our_rank": 18,
+      "fp_rank": 1,
+      "rank_diff": -17
+    },
+    {
+      "player_id": "00-0034855",
+      "player_name": "Baker Mayfield",
+      "position": "QB",
+      "team": "TB",
+      "proj_median": 17.1,
+      "our_rank": 19,
+      "fp_rank": 124,
+      "rank_diff": 105
+    },
+    {
+      "player_id": "00-0033280",
+      "player_name": "Christian McCaffrey",
+      "position": "RB",
+      "team": "SF",
+      "proj_median": 17.0,
+      "our_rank": 20,
+      "fp_rank": 9,
+      "rank_diff": -11
+    },
+    {
+      "player_id": "00-0035710",
+      "player_name": "Daniel Jones",
+      "position": "QB",
+      "team": "IND",
+      "proj_median": 16.9,
+      "our_rank": 21,
+      "fp_rank": 169,
+      "rank_diff": 148
+    },
+    {
+      "player_id": "00-0040122",
+      "player_name": "Ashton Jeanty",
+      "position": "RB",
+      "team": "LV",
+      "proj_median": 16.7,
+      "our_rank": 22,
+      "fp_rank": 19,
+      "rank_diff": -3
+    },
+    {
+      "player_id": "00-0039851",
+      "player_name": "Drake Maye",
+      "position": "QB",
+      "team": "NE",
+      "proj_median": 16.7,
+      "our_rank": 23,
+      "fp_rank": 32,
+      "rank_diff": 9
+    },
+    {
+      "player_id": "00-0036223",
+      "player_name": "Jonathan Taylor",
+      "position": "RB",
+      "team": "IND",
+      "proj_median": 16.3,
+      "our_rank": 24,
+      "fp_rank": 10,
+      "rank_diff": -14
+    },
+    {
+      "player_id": "00-0037248",
+      "player_name": "James Cook",
+      "position": "RB",
+      "team": "BUF",
+      "proj_median": 16.2,
+      "our_rank": 25,
+      "fp_rank": 15,
+      "rank_diff": -10
+    },
+    {
+      "player_id": "00-0034796",
+      "player_name": "Lamar Jackson",
+      "position": "QB",
+      "team": "BAL",
+      "proj_median": 16.1,
+      "our_rank": 26,
+      "fp_rank": 27,
+      "rank_diff": 1
+    },
+    {
+      "player_id": "00-0036442",
+      "player_name": "Joe Burrow",
+      "position": "QB",
+      "team": "CIN",
+      "proj_median": 16.1,
+      "our_rank": 27,
+      "fp_rank": 42,
+      "rank_diff": 15
+    },
+    {
+      "player_id": "00-0039040",
+      "player_name": "De'Von Achane",
+      "position": "RB",
+      "team": "MIA",
+      "proj_median": 16.0,
+      "our_rank": 28,
+      "fp_rank": 18,
+      "rank_diff": -10
+    },
+    {
+      "player_id": "00-0039910",
+      "player_name": "Jayden Daniels",
+      "position": "QB",
+      "team": "WAS",
+      "proj_median": 15.7,
+      "our_rank": 29,
+      "fp_rank": 50,
+      "rank_diff": 21
+    },
+    {
+      "player_id": "00-0039067",
+      "player_name": "Rashee Rice",
+      "position": "WR",
+      "team": "KC",
+      "proj_median": 15.6,
+      "our_rank": 30,
+      "fp_rank": 21,
+      "rank_diff": -9
+    },
+    {
+      "player_id": "00-0023459",
+      "player_name": "Aaron Rodgers",
+      "position": "QB",
+      "team": "PIT",
+      "proj_median": 15.5,
+      "our_rank": 31,
+      "fp_rank": 245,
+      "rank_diff": 214
+    },
+    {
+      "player_id": "00-0037247",
+      "player_name": "George Pickens",
+      "position": "WR",
+      "team": "DAL",
+      "proj_median": 15.2,
+      "our_rank": 32,
+      "fp_rank": 16,
+      "rank_diff": -16
+    },
+    {
+      "player_id": "00-0039163",
+      "player_name": "C.J. Stroud",
+      "position": "QB",
+      "team": "HOU",
+      "proj_median": 14.9,
+      "our_rank": 33,
+      "fp_rank": 137,
+      "rank_diff": 104
+    },
+    {
+      "player_id": "00-0033119",
+      "player_name": "Jacoby Brissett",
+      "position": "QB",
+      "team": "ARI",
+      "proj_median": 14.7,
+      "our_rank": 34,
+      "fp_rank": 182,
+      "rank_diff": 148
+    },
+    {
+      "player_id": "00-0040734",
+      "player_name": "TreVeyon Henderson",
+      "position": "RB",
+      "team": "NE",
+      "proj_median": 14.7,
+      "our_rank": 35,
+      "fp_rank": 55,
+      "rank_diff": 20
+    },
+    {
+      "player_id": "00-0037238",
+      "player_name": "Drake London",
+      "position": "WR",
+      "team": "ATL",
+      "proj_median": 14.7,
+      "our_rank": 36,
+      "fp_rank": 11,
+      "rank_diff": -25
+    },
+    {
+      "player_id": "00-0037239",
+      "player_name": "Chris Olave",
+      "position": "WR",
+      "team": "NO",
+      "proj_median": 14.6,
+      "our_rank": 37,
+      "fp_rank": 14,
+      "rank_diff": -23
+    },
+    {
+      "player_id": "00-0034869",
+      "player_name": "Sam Darnold",
+      "position": "QB",
+      "team": "SEA",
+      "proj_median": 14.5,
+      "our_rank": 38,
+      "fp_rank": 143,
+      "rank_diff": 105
+    },
+    {
+      "player_id": "00-0036264",
+      "player_name": "Jordan Love",
+      "position": "QB",
+      "team": "GB",
+      "proj_median": 14.5,
+      "our_rank": 39,
+      "fp_rank": 109,
+      "rank_diff": 70
+    },
+    {
+      "player_id": "00-0039337",
+      "player_name": "Malik Nabers",
+      "position": "WR",
+      "team": "NYG",
+      "proj_median": 14.4,
+      "our_rank": 40,
+      "fp_rank": 12,
+      "rank_diff": -28
+    },
+    {
+      "player_id": "00-0036973",
+      "player_name": "Travis Etienne",
+      "position": "RB",
+      "team": "JAX",
+      "proj_median": 14.3,
+      "our_rank": 41,
+      "fp_rank": 51,
+      "rank_diff": 10
+    },
+    {
+      "player_id": "00-0040666",
+      "player_name": "Omarion Hampton",
+      "position": "RB",
+      "team": "LAC",
+      "proj_median": 14.3,
+      "our_rank": 42,
+      "fp_rank": 23,
+      "rank_diff": -19
+    },
+    {
+      "player_id": "00-0035676",
+      "player_name": "A.J. Brown",
+      "position": "WR",
+      "team": "PHI",
+      "proj_median": 14.3,
+      "our_rank": 43,
+      "fp_rank": 22,
+      "rank_diff": -21
+    },
+    {
+      "player_id": "00-0038597",
+      "player_name": "Chase Brown",
+      "position": "RB",
+      "team": "CIN",
+      "proj_median": 14.3,
+      "our_rank": 44,
+      "fp_rank": 26,
+      "rank_diff": -18
+    },
+    {
+      "player_id": "00-0036358",
+      "player_name": "CeeDee Lamb",
+      "position": "WR",
+      "team": "DAL",
+      "proj_median": 14.2,
+      "our_rank": 45,
+      "fp_rank": 6,
+      "rank_diff": -39
+    },
+    {
+      "player_id": "00-0038120",
+      "player_name": "Breece Hall",
+      "position": "RB",
+      "team": "NYJ",
+      "proj_median": 14.1,
+      "our_rank": 46,
+      "fp_rank": 40,
+      "rank_diff": -6
+    },
+    {
+      "player_id": "00-0037840",
+      "player_name": "Kyren Williams",
+      "position": "RB",
+      "team": "LA",
+      "proj_median": 14.0,
+      "our_rank": 47,
+      "fp_rank": 48,
+      "rank_diff": 1
+    },
+    {
+      "player_id": "00-0035228",
+      "player_name": "Kyler Murray",
+      "position": "QB",
+      "team": "ARI",
+      "proj_median": 13.8,
+      "our_rank": 48,
+      "fp_rank": 126,
+      "rank_diff": 78
+    },
+    {
+      "player_id": "00-0036945",
+      "player_name": "Justin Fields",
+      "position": "QB",
+      "team": "NYJ",
+      "proj_median": 13.7,
+      "our_rank": 49,
+      "fp_rank": 320,
+      "rank_diff": 271
+    },
+    {
+      "player_id": "00-0039064",
+      "player_name": "Zay Flowers",
+      "position": "WR",
+      "team": "BAL",
+      "proj_median": 13.7,
+      "our_rank": 50,
+      "fp_rank": 33,
+      "rank_diff": -17
+    }
+  ],
+  "we_rank_higher": [
+    {
+      "player_id": "00-0036945",
+      "player_name": "Justin Fields",
+      "position": "QB",
+      "team": "NYJ",
+      "proj_median": 13.7,
+      "our_rank": 49,
+      "fp_rank": 320,
+      "rank_diff": 271
+    },
+    {
+      "player_id": "00-0032268",
+      "player_name": "Marcus Mariota",
+      "position": "QB",
+      "team": "WAS",
+      "proj_median": 12.0,
+      "our_rank": 75,
+      "fp_rank": 331,
+      "rank_diff": 256
+    },
+    {
+      "player_id": "00-0026158",
+      "player_name": "Joe Flacco",
+      "position": "QB",
+      "team": "CIN",
+      "proj_median": 12.0,
+      "our_rank": 76,
+      "fp_rank": 326,
+      "rank_diff": 250
+    },
+    {
+      "player_id": "00-0036972",
+      "player_name": "Mac Jones",
+      "position": "QB",
+      "team": "SF",
+      "proj_median": 12.7,
+      "our_rank": 68,
+      "fp_rank": 297,
+      "rank_diff": 229
+    },
+    {
+      "player_id": "00-0023459",
+      "player_name": "Aaron Rodgers",
+      "position": "QB",
+      "team": "PIT",
+      "proj_median": 15.5,
+      "our_rank": 31,
+      "fp_rank": 245,
+      "rank_diff": 214
+    },
+    {
+      "player_id": "00-0036212",
+      "player_name": "Tua Tagovailoa",
+      "position": "QB",
+      "team": "MIA",
+      "proj_median": 13.5,
+      "our_rank": 54,
+      "fp_rank": 268,
+      "rank_diff": 214
+    },
+    {
+      "player_id": "00-0030061",
+      "player_name": "Zach Ertz",
+      "position": "TE",
+      "team": "WAS",
+      "proj_median": 9.1,
+      "our_rank": 142,
+      "fp_rank": 338,
+      "rank_diff": 196
+    },
+    {
+      "player_id": "00-0030565",
+      "player_name": "Geno Smith",
+      "position": "QB",
+      "team": "LV",
+      "proj_median": 12.6,
+      "our_rank": 69,
+      "fp_rank": 255,
+      "rank_diff": 186
+    },
+    {
+      "player_id": "00-0035289",
+      "player_name": "Gardner Minshew",
+      "position": "QB",
+      "team": "KC",
+      "proj_median": 8.6,
+      "our_rank": 152,
+      "fp_rank": 335,
+      "rank_diff": 183
+    },
+    {
+      "player_id": "00-0039923",
+      "player_name": "J.J. McCarthy",
+      "position": "QB",
+      "team": "MIN",
+      "proj_median": 12.9,
+      "our_rank": 61,
+      "fp_rank": 240,
+      "rank_diff": 179
+    },
+    {
+      "player_id": "00-0029604",
+      "player_name": "Kirk Cousins",
+      "position": "QB",
+      "team": "ATL",
+      "proj_median": 10.5,
+      "our_rank": 117,
+      "fp_rank": 291,
+      "rank_diff": 174
+    },
+    {
+      "player_id": "00-0039398",
+      "player_name": "Joe Milton III",
+      "position": "QB",
+      "team": "DAL",
+      "proj_median": 8.4,
+      "our_rank": 161,
+      "fp_rank": 321,
+      "rank_diff": 160
+    },
+    {
+      "player_id": "00-0035710",
+      "player_name": "Daniel Jones",
+      "position": "QB",
+      "team": "IND",
+      "proj_median": 16.9,
+      "our_rank": 21,
+      "fp_rank": 169,
+      "rank_diff": 148
+    },
+    {
+      "player_id": "00-0033119",
+      "player_name": "Jacoby Brissett",
+      "position": "QB",
+      "team": "ARI",
+      "proj_median": 14.7,
+      "our_rank": 34,
+      "fp_rank": 182,
+      "rank_diff": 148
+    },
+    {
+      "player_id": "00-0033923",
+      "player_name": "Kareem Hunt",
+      "position": "RB",
+      "team": "KC",
+      "proj_median": 7.7,
+      "our_rank": 172,
+      "fp_rank": 311,
+      "rank_diff": 139
+    }
+  ],
+  "we_rank_lower": [
+    {
+      "player_id": "00-0040719",
+      "player_name": "Bhayshul Tuten",
+      "position": "RB",
+      "team": "JAX",
+      "proj_median": 7.2,
+      "our_rank": 189,
+      "fp_rank": 74,
+      "rank_diff": -115
+    },
+    {
+      "player_id": "00-0033921",
+      "player_name": "Chris Godwin",
+      "position": "WR",
+      "team": "TB",
+      "proj_median": 7.5,
+      "our_rank": 181,
+      "fp_rank": 67,
+      "rank_diff": -114
+    },
+    {
+      "player_id": "00-0034827",
+      "player_name": "D.J. Moore",
+      "position": "WR",
+      "team": "CHI",
+      "proj_median": 8.0,
+      "our_rank": 168,
+      "fp_rank": 60,
+      "rank_diff": -108
+    },
+    {
+      "player_id": "00-0040735",
+      "player_name": "Luther Burden III",
+      "position": "WR",
+      "team": "CHI",
+      "proj_median": 9.3,
+      "our_rank": 138,
+      "fp_rank": 39,
+      "rank_diff": -99
+    },
+    {
+      "player_id": "00-0036555",
+      "player_name": "Chuba Hubbard",
+      "position": "RB",
+      "team": "CAR",
+      "proj_median": 7.3,
+      "our_rank": 187,
+      "fp_rank": 89,
+      "rank_diff": -98
+    },
+    {
+      "player_id": "00-0031408",
+      "player_name": "Mike Evans",
+      "position": "WR",
+      "team": "TB",
+      "proj_median": 9.3,
+      "our_rank": 137,
+      "fp_rank": 43,
+      "rank_diff": -94
+    },
+    {
+      "player_id": "00-0035685",
+      "player_name": "David Montgomery",
+      "position": "RB",
+      "team": "DET",
+      "proj_median": 8.4,
+      "our_rank": 160,
+      "fp_rank": 68,
+      "rank_diff": -92
+    },
+    {
+      "player_id": "00-0040730",
+      "player_name": "RJ Harvey",
+      "position": "RB",
+      "team": "DEN",
+      "proj_median": 8.7,
+      "our_rank": 150,
+      "fp_rank": 62,
+      "rank_diff": -88
+    },
+    {
+      "player_id": "00-0040236",
+      "player_name": "Kyle Monangai",
+      "position": "RB",
+      "team": "CHI",
+      "proj_median": 7.8,
+      "our_rank": 170,
+      "fp_rank": 88,
+      "rank_diff": -82
+    },
+    {
+      "player_id": "00-0038041",
+      "player_name": "Jake Ferguson",
+      "position": "TE",
+      "team": "DAL",
+      "proj_median": 7.5,
+      "our_rank": 179,
+      "fp_rank": 99,
+      "rank_diff": -80
+    },
+    {
+      "player_id": "00-0040583",
+      "player_name": "Woody Marks",
+      "position": "RB",
+      "team": "HOU",
+      "proj_median": 7.0,
+      "our_rank": 196,
+      "fp_rank": 118,
+      "rank_diff": -78
+    },
+    {
+      "player_id": "00-0035659",
+      "player_name": "Terry McLaurin",
+      "position": "WR",
+      "team": "WAS",
+      "proj_median": 10.1,
+      "our_rank": 123,
+      "fp_rank": 47,
+      "rank_diff": -76
+    },
+    {
+      "player_id": "00-0038134",
+      "player_name": "Kenneth Walker",
+      "position": "RB",
+      "team": "SEA",
+      "proj_median": 11.1,
+      "our_rank": 101,
+      "fp_rank": 31,
+      "rank_diff": -70
+    },
+    {
+      "player_id": "00-0040663",
+      "player_name": "Harold Fannin Jr.",
+      "position": "TE",
+      "team": "CLE",
+      "proj_median": 9.8,
+      "our_rank": 131,
+      "fp_rank": 61,
+      "rank_diff": -70
+    },
+    {
+      "player_id": "00-0040126",
+      "player_name": "Colston Loveland",
+      "position": "TE",
+      "team": "CHI",
+      "proj_median": 10.6,
+      "our_rank": 112,
+      "fp_rank": 44,
+      "rank_diff": -68
+    }
+  ],
+  "fp_only_top_n": [
+    {
+      "player": "Jeremiyah Love",
+      "pos": "RB",
+      "team": "FA",
+      "fp_rank": 36
+    },
+    {
+      "player": "Makai Lemon",
+      "pos": "WR",
+      "team": "FA",
+      "fp_rank": 86
+    },
+    {
+      "player": "Carnell Tate",
+      "pos": "WR",
+      "team": "FA",
+      "fp_rank": 97
+    },
+    {
+      "player": "Blake Corum",
+      "pos": "RB",
+      "team": "LAR",
+      "fp_rank": 100
+    },
+    {
+      "player": "Tyler Allgeier",
+      "pos": "RB",
+      "team": "ARI",
+      "fp_rank": 104
+    },
+    {
+      "player": "Jordyn Tyson",
+      "pos": "WR",
+      "team": "FA",
+      "fp_rank": 106
+    },
+    {
+      "player": "James Conner",
+      "pos": "RB",
+      "team": "ARI",
+      "fp_rank": 114
+    },
+    {
+      "player": "Dylan Sampson",
+      "pos": "RB",
+      "team": "CLE",
+      "fp_rank": 131
+    },
+    {
+      "player": "Isaiah Likely",
+      "pos": "TE",
+      "team": "NYG",
+      "fp_rank": 135
+    },
+    {
+      "player": "Jalen Coker",
+      "pos": "WR",
+      "team": "CAR",
+      "fp_rank": 140
+    },
+    {
+      "player": "Jordan Mason",
+      "pos": "RB",
+      "team": "MIN",
+      "fp_rank": 141
+    },
+    {
+      "player": "Trey Benson",
+      "pos": "RB",
+      "team": "ARI",
+      "fp_rank": 144
+    },
+    {
+      "player": "Adonai Mitchell",
+      "pos": "WR",
+      "team": "NYJ",
+      "fp_rank": 150
+    },
+    {
+      "player": "Braelon Allen",
+      "pos": "RB",
+      "team": "NYJ",
+      "fp_rank": 154
+    },
+    {
+      "player": "Jadarian Price",
+      "pos": "RB",
+      "team": "FA",
+      "fp_rank": 158
+    },
+    {
+      "player": "Chimere Dike",
+      "pos": "WR",
+      "team": "TEN",
+      "fp_rank": 159
+    },
+    {
+      "player": "Tre Harris",
+      "pos": "WR",
+      "team": "LAC",
+      "fp_rank": 161
+    },
+    {
+      "player": "Emmett Johnson",
+      "pos": "RB",
+      "team": "FA",
+      "fp_rank": 162
+    },
+    {
+      "player": "Jaylin Noel",
+      "pos": "WR",
+      "team": "HOU",
+      "fp_rank": 165
+    },
+    {
+      "player": "Tank Bigsby",
+      "pos": "RB",
+      "team": "PHI",
+      "fp_rank": 166
+    },
+    {
+      "player": "Keaton Mitchell",
+      "pos": "RB",
+      "team": "LAC",
+      "fp_rank": 167
+    },
+    {
+      "player": "Brandon Aiyuk",
+      "pos": "WR",
+      "team": "SF",
+      "fp_rank": 172
+    },
+    {
+      "player": "Emanuel Wilson",
+      "pos": "RB",
+      "team": "SEA",
+      "fp_rank": 174
+    },
+    {
+      "player": "Jonah Coleman",
+      "pos": "RB",
+      "team": "FA",
+      "fp_rank": 175
+    },
+    {
+      "player": "Denzel Boston",
+      "pos": "WR",
+      "team": "FA",
+      "fp_rank": 176
+    }
+  ],
+  "our_only_top_n": [
+    {
+      "player_name": "Aaron Rodgers",
+      "position": "QB",
+      "team": "PIT",
+      "our_rank": 31
+    },
+    {
+      "player_name": "Justin Fields",
+      "position": "QB",
+      "team": "NYJ",
+      "our_rank": 49
+    },
+    {
+      "player_name": "Tua Tagovailoa",
+      "position": "QB",
+      "team": "MIA",
+      "our_rank": 54
+    },
+    {
+      "player_name": "Russell Wilson",
+      "position": "QB",
+      "team": "NYG",
+      "our_rank": 56
+    },
+    {
+      "player_name": "J.J. McCarthy",
+      "position": "QB",
+      "team": "MIN",
+      "our_rank": 61
+    },
+    {
+      "player_name": "Mac Jones",
+      "position": "QB",
+      "team": "SF",
+      "our_rank": 68
+    },
+    {
+      "player_name": "Geno Smith",
+      "position": "QB",
+      "team": "LV",
+      "our_rank": 69
+    },
+    {
+      "player_name": "Marcus Mariota",
+      "position": "QB",
+      "team": "WAS",
+      "our_rank": 75
+    },
+    {
+      "player_name": "Joe Flacco",
+      "position": "QB",
+      "team": "CIN",
+      "our_rank": 76
+    },
+    {
+      "player_name": "Spencer Rattler",
+      "position": "QB",
+      "team": "NO",
+      "our_rank": 85
+    },
+    {
+      "player_name": "Tyrod Taylor",
+      "position": "QB",
+      "team": "NYJ",
+      "our_rank": 86
+    },
+    {
+      "player_name": "Michael Penix Jr.",
+      "position": "QB",
+      "team": "ATL",
+      "our_rank": 89
+    },
+    {
+      "player_name": "Carson Wentz",
+      "position": "QB",
+      "team": "MIN",
+      "our_rank": 98
+    },
+    {
+      "player_name": "Andy Dalton",
+      "position": "QB",
+      "team": "CAR",
+      "our_rank": 104
+    },
+    {
+      "player_name": "Davis Mills",
+      "position": "QB",
+      "team": "HOU",
+      "our_rank": 105
+    },
+    {
+      "player_name": "Mitchell Trubisky",
+      "position": "QB",
+      "team": "BUF",
+      "our_rank": 106
+    },
+    {
+      "player_name": "Keenan Allen",
+      "position": "WR",
+      "team": "LAC",
+      "our_rank": 116
+    },
+    {
+      "player_name": "Kirk Cousins",
+      "position": "QB",
+      "team": "ATL",
+      "our_rank": 117
+    },
+    {
+      "player_name": "Dillon Gabriel",
+      "position": "QB",
+      "team": "CLE",
+      "our_rank": 133
+    },
+    {
+      "player_name": "Zach Ertz",
+      "position": "TE",
+      "team": "WAS",
+      "our_rank": 142
+    },
+    {
+      "player_name": "Trey Lance",
+      "position": "QB",
+      "team": "LAC",
+      "our_rank": 149
+    },
+    {
+      "player_name": "Joshua Dobbs",
+      "position": "QB",
+      "team": "NE",
+      "our_rank": 151
+    },
+    {
+      "player_name": "Gardner Minshew",
+      "position": "QB",
+      "team": "KC",
+      "our_rank": 152
+    },
+    {
+      "player_name": "Taysom Hill",
+      "position": "QB",
+      "team": "NO",
+      "our_rank": 153
+    },
+    {
+      "player_name": "Darren Waller",
+      "position": "TE",
+      "team": "MIA",
+      "our_rank": 156
+    }
+  ]
+}
