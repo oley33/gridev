@@ -363,7 +363,7 @@ export default function PerformancePage() {
 
       {/* --- Consensus snapshot --- */}
       <section className="mb-10">
-        <div className="mb-2 flex items-baseline justify-between">
+        <div className="mb-2 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
           <h2 className="text-lg font-semibold">
             vs FantasyPros Consensus ({consensus.season})
           </h2>
@@ -378,7 +378,7 @@ export default function PerformancePage() {
           rankings line up with the current FP ECR.
         </p>
 
-        <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
           <div className="rounded-lg border border-card-border bg-card p-4">
             <div className="text-xs uppercase tracking-wider text-muted">
               Overall Spearman ρ

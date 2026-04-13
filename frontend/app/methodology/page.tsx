@@ -451,7 +451,7 @@ function BayesianBlendDiagram() {
           </div>
         </div>
 
-        <div className="text-center text-2xl text-muted">+</div>
+        <div className="hidden md:block text-center text-2xl text-muted">+</div>
 
         <div className="rounded-lg border border-accent/40 bg-accent/5 p-4">
           <div className="text-xs font-semibold uppercase tracking-wider text-accent">
@@ -467,7 +467,7 @@ function BayesianBlendDiagram() {
           </div>
         </div>
 
-        <div className="text-center text-2xl text-muted">=</div>
+        <div className="hidden md:block text-center text-2xl text-muted">=</div>
 
         <div className="rounded-lg border border-te/50 bg-te/5 p-4">
           <div className="text-xs font-semibold uppercase tracking-wider text-te">

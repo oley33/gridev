@@ -119,12 +119,12 @@ export default function PlayerModal({ player, onClose }: Props) {
   return (
     <dialog
       ref={dialogRef}
-      className="fixed inset-0 z-50 m-auto w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-xl border border-card-border bg-card p-0 text-foreground backdrop:bg-black/60"
+      className="fixed inset-0 z-50 m-auto w-[calc(100%-1rem)] max-w-2xl max-h-[90vh] overflow-y-auto rounded-xl border border-card-border bg-card p-0 text-foreground backdrop:bg-black/60"
       onClick={(e) => {
         if (e.target === dialogRef.current) onClose();
       }}
     >
-      <div className="p-6">
+      <div className="p-4 sm:p-6">
         <div className="mb-6 flex items-start justify-between">
           <div>
             <div className="flex items-center gap-2">
@@ -208,7 +208,7 @@ export default function PlayerModal({ player, onClose }: Props) {
         </div>
 
         {/* Key stats grid */}
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
           <div className="rounded-lg bg-background p-3 text-center">
             <div className="text-2xl font-bold font-mono">
               {player.proj_median.toFixed(1)}

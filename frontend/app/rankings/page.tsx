@@ -161,7 +161,7 @@ export default function RankingsPage() {
                 <th className="px-3 py-2 text-left text-xs font-medium uppercase tracking-wider text-muted">
                   Pos
                 </th>
-                <th className="px-3 py-2 text-left text-xs font-medium uppercase tracking-wider text-muted">
+                <th className="px-3 py-2 text-left text-xs font-medium uppercase tracking-wider text-muted hidden md:table-cell">
                   Team
                 </th>
                 <th className="px-3 py-2 text-right text-xs font-medium uppercase tracking-wider text-accent">
@@ -170,13 +170,13 @@ export default function RankingsPage() {
                 <th className="px-3 py-2 text-right text-xs font-medium uppercase tracking-wider text-muted">
                   Proj
                 </th>
-                <th className="px-3 py-2 text-right text-xs font-medium uppercase tracking-wider text-muted">
+                <th className="px-3 py-2 text-right text-xs font-medium uppercase tracking-wider text-muted hidden md:table-cell">
                   Floor
                 </th>
-                <th className="px-3 py-2 text-right text-xs font-medium uppercase tracking-wider text-muted">
+                <th className="px-3 py-2 text-right text-xs font-medium uppercase tracking-wider text-muted hidden sm:table-cell">
                   Ceiling
                 </th>
-                <th className="px-3 py-2 text-right text-xs font-medium uppercase tracking-wider text-muted">
+                <th className="px-3 py-2 text-right text-xs font-medium uppercase tracking-wider text-muted hidden md:table-cell">
                   Boom%
                 </th>
               </tr>
@@ -195,20 +195,20 @@ export default function RankingsPage() {
                   <td className="px-3 py-2">
                     <PositionBadge position={p.position} />
                   </td>
-                  <td className="px-3 py-2 text-muted">{p.team}</td>
+                  <td className="px-3 py-2 text-muted hidden md:table-cell">{p.team}</td>
                   <td className="px-3 py-2 text-right font-mono font-bold text-accent">
                     {(p.vor ?? 0).toFixed(1)}
                   </td>
                   <td className="px-3 py-2 text-right font-mono">
                     {p.proj_median.toFixed(1)}
                   </td>
-                  <td className="px-3 py-2 text-right font-mono text-danger/80">
+                  <td className="px-3 py-2 text-right font-mono text-danger/80 hidden md:table-cell">
                     {p.floor_p10.toFixed(1)}
                   </td>
-                  <td className="px-3 py-2 text-right font-mono text-success/80">
+                  <td className="px-3 py-2 text-right font-mono text-success/80 hidden sm:table-cell">
                     {p.ceiling_p90.toFixed(1)}
                   </td>
-                  <td className="px-3 py-2 text-right font-mono">
+                  <td className="px-3 py-2 text-right font-mono hidden md:table-cell">
                     {(p.boom_pct * 100).toFixed(0)}%
                   </td>
                 </tr>

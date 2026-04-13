@@ -127,9 +127,9 @@ export default function ProjectionsPage() {
           placeholder="Search players or teams..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="rounded-lg border border-card-border bg-card px-3 py-1.5 text-sm text-foreground placeholder-muted outline-none focus:border-accent focus:ring-1 focus:ring-accent w-64"
+          className="rounded-lg border border-card-border bg-card px-3 py-1.5 text-sm text-foreground placeholder-muted outline-none focus:border-accent focus:ring-1 focus:ring-accent w-full sm:w-64"
         />
-        <span className="ml-auto text-sm text-muted">
+        <span className="sm:ml-auto text-sm text-muted">
           {filtered.length} players
         </span>
       </div>
@@ -153,13 +153,13 @@ export default function ProjectionsPage() {
                 <th className="px-3 py-2 text-left text-xs font-medium uppercase tracking-wider text-muted">
                   Pos
                 </th>
-                <SortHeader label="Team" field="team" className="text-left" />
+                <SortHeader label="Team" field="team" className="text-left hidden md:table-cell" />
                 <SortHeader label="Proj" field="proj_median" className="text-right" />
-                <SortHeader label="Floor" field="floor_p10" className="text-right" />
-                <SortHeader label="Ceiling" field="ceiling_p90" className="text-right" />
-                <SortHeader label="Boom%" field="boom_pct" className="text-right" />
+                <SortHeader label="Floor" field="floor_p10" className="text-right hidden md:table-cell" />
+                <SortHeader label="Ceiling" field="ceiling_p90" className="text-right hidden sm:table-cell" />
+                <SortHeader label="Boom%" field="boom_pct" className="text-right hidden md:table-cell" />
                 <SortHeader label="Bust%" field="relative_bust_pct" className="text-right" />
-                <SortHeader label="Std" field="proj_std" className="text-right" />
+                <SortHeader label="Std" field="proj_std" className="text-right hidden md:table-cell" />
               </tr>
             </thead>
             <tbody>
@@ -175,23 +175,23 @@ export default function ProjectionsPage() {
                   <td className="px-3 py-2">
                     <PositionBadge position={p.position} />
                   </td>
-                  <td className="px-3 py-2 text-muted">{p.team}</td>
+                  <td className="px-3 py-2 text-muted hidden md:table-cell">{p.team}</td>
                   <td className="px-3 py-2 text-right font-mono font-semibold">
                     {p.proj_median.toFixed(1)}
                   </td>
-                  <td className="px-3 py-2 text-right font-mono text-danger/80">
+                  <td className="px-3 py-2 text-right font-mono text-danger/80 hidden md:table-cell">
                     {p.floor_p10.toFixed(1)}
                   </td>
-                  <td className="px-3 py-2 text-right font-mono text-success/80">
+                  <td className="px-3 py-2 text-right font-mono text-success/80 hidden sm:table-cell">
                     {p.ceiling_p90.toFixed(1)}
                   </td>
-                  <td className="px-3 py-2 text-right font-mono">
+                  <td className="px-3 py-2 text-right font-mono hidden md:table-cell">
                     {(p.boom_pct * 100).toFixed(0)}%
                   </td>
                   <td className="px-3 py-2 text-right font-mono">
                     {((p.relative_bust_pct ?? p.bust_pct) * 100).toFixed(0)}%
                   </td>
-                  <td className="px-3 py-2 text-right font-mono text-muted">
+                  <td className="px-3 py-2 text-right font-mono text-muted hidden md:table-cell">
                     {p.proj_std.toFixed(1)}
                   </td>
                 </tr>

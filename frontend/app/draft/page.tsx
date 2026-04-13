@@ -159,7 +159,7 @@ export default function DraftPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-      <div className="mb-6 flex items-center justify-between">
+      <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-bold">Draft Assistant</h1>
           <p className="mt-1 text-sm text-muted">
@@ -300,9 +300,9 @@ export default function DraftPage() {
               placeholder="Search..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="rounded-lg border border-card-border bg-card px-3 py-1.5 text-sm text-foreground placeholder-muted outline-none focus:border-accent focus:ring-1 focus:ring-accent w-48"
+              className="rounded-lg border border-card-border bg-card px-3 py-1.5 text-sm text-foreground placeholder-muted outline-none focus:border-accent focus:ring-1 focus:ring-accent w-full sm:w-48"
             />
-            <span className="ml-auto text-xs text-muted">
+            <span className="sm:ml-auto text-xs text-muted">
               {availablePlayers.length} available
             </span>
           </div>
@@ -317,13 +317,13 @@ export default function DraftPage() {
                   <th className="px-3 py-2 text-left text-xs font-medium uppercase tracking-wider text-muted">
                     Pos
                   </th>
-                  <th className="px-3 py-2 text-left text-xs font-medium uppercase tracking-wider text-muted">
+                  <th className="px-3 py-2 text-left text-xs font-medium uppercase tracking-wider text-muted hidden md:table-cell">
                     Team
                   </th>
                   <th className="px-3 py-2 text-right text-xs font-medium uppercase tracking-wider text-muted">
                     Proj
                   </th>
-                  <th className="px-3 py-2 text-right text-xs font-medium uppercase tracking-wider text-muted">
+                  <th className="px-3 py-2 text-right text-xs font-medium uppercase tracking-wider text-muted hidden sm:table-cell">
                     Boom%
                   </th>
                   <th className="px-3 py-2 text-center text-xs font-medium uppercase tracking-wider text-muted">
@@ -348,11 +348,11 @@ export default function DraftPage() {
                     <td className="px-3 py-2">
                       <PositionBadge position={p.position} />
                     </td>
-                    <td className="px-3 py-2 text-muted">{p.team}</td>
+                    <td className="px-3 py-2 text-muted hidden md:table-cell">{p.team}</td>
                     <td className="px-3 py-2 text-right font-mono font-semibold">
                       {p.proj_median.toFixed(1)}
                     </td>
-                    <td className="px-3 py-2 text-right font-mono">
+                    <td className="px-3 py-2 text-right font-mono hidden sm:table-cell">
                       {(p.boom_pct * 100).toFixed(0)}%
                     </td>
                     <td className="px-3 py-2 text-center">
